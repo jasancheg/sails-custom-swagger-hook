@@ -40,7 +40,7 @@ Key              | Example value                 | Description
 
 Modify the `config/http.js` to look like:
 
-```
+```js
 customMiddleware: function (app) {
     var swagger = require('sails-custom-swagger-hook');
     var express = require('express');
