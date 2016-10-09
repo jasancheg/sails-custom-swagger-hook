@@ -1,0 +1,22 @@
+#custom-swagger .swagger-section #header {
+  background-color: #2BA0D3;
+}
+
+#custom-swagger .swagger-section #explore,
+#custom-swagger .swagger-section #auth_container .authorize__btn {
+  background-color: #42BFeF;
+}
+
+#custom-swagger .swagger-section #api_selector input {
+  height: 20px;
+  padding: 4px 12px;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  color: #777;
+  line-height: 1.4em;
+}
