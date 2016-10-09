@@ -5,9 +5,9 @@
 
 > Important! develoment in progress..
 
-* [swagger.io](swagger-url) hook for [Sails JS](sails-url).
+* [swagger.io](http://swagger.io/) hook for [Sails JS](http://sailsjs.org/).
 * Customized to support the Swagger 2.0 specification, it is a simple and clean solution to integrate swagger with Sails JS, the application's models, controllers, and routes are automatically aggregated and transformed into a Swagger Document.
-* Based in forks(outdated) of [swagger-express](swagger-express-url), [sails-swagger](sails-swagger-url) and [sails-swagr](sails-swagr-url), but uptate and personalize to use with up to date dependencies and with a couple of extra features for allow inject CSS and JS files for brand personalization.
+* Based in forks(outdated) of [swagger-express](https://github.com/fliptoo/swagger-express), [sails-swagger](https://github.com/tjwebb/sails-swagger) and [sails-swagr](https://github.com/qbanguy/sails-swagr), but uptate and personalize to use with up to date dependencies and with a couple of extra features for allow inject CSS and JS files for brand personalization.
 
 
 ### Summary
@@ -19,6 +19,10 @@ you may create a `docs` directory under `api/` and place YML documents with path
 Here is how documentation API page looks like ([sample](https://github.com/jasancheg/sails-custom-swagger-hook/blob/master/samples/picture-1.png)):
 
 ![](https://raw.githubusercontent.com/jasancheg/sails-custom-swagger-hook/master/samples/picture-1.png)
+
+**Logs**
+![](https://raw.githubusercontent.com/jasancheg/sails-custom-swagger-hook/master/samples/picture-2.png)
+
 
 ## Installation
 
@@ -43,9 +47,25 @@ Key              | Example value                 | Description
 
 > Note:
 > * `sails.config.appPath` is provided by sails js
-> * `sails.config.appUrl` is a environment variable, please see: [sails-swagr](sails-get-base-url)
-> * Currently the implementation for personalization is very basic, you can place the folder for the customization files in any convenient folder of your application, however the name for the css/js files are mandatory. For properly operation of the hook please preserve the name for `custom-swagger.css` and `custom-swagger.js`
+> * `sails.config.appUrl` is a environment variable, please see: [sails environment variables](http://sailsjs.org/documentation/reference/application/sails-get-base-url)
+> * Currently the implementation for personalization is very basic, you can place the folder for the customization files in any convenient folder of your application, for example `assets/docs`, however the name for the css/js files are mandatory. For properly operation of the hook please preserve the name for `custom-swagger.css` and `custom-swagger.js`
 > * Files placed in your customization folder are availables as static assets, For example if your customization folder is `assets/docs` any file placed on the folder is available in the url `{host path}/api/docs/{file path/name}`
+
+
+#### Simple set sails.config.appPath variable
+
+Read:
+* [Environment-specific files](http://sailsjs.org/documentation/reference/application/sails-get-base-url)
+* [sails get base url](http://sailsjs.org/documentation/concepts/configuration#?environmentspecific-files-config-env)
+
+*Steps (e.g.):*
+* In your `config/local.js` file add the value `appUrl: "http://localhost:1337"`
+* In your `config/env/heroku.js` file add the value `appUrl: "http://myapp.herokuapp.com"`
+* In your `config/env/development.js` file add the value `appUrl: "http://dev.myapp.com"`
+* In your `config/env/staging.js` file add the value `appUrl: "http://stg.myapp.com"`
+* In your `config/env/production.js` file add the value `appUrl: "http://myapp.com"`
+* Set the properly NODE_ENV variable on each environment that you configure
+
 
 ## Sails Integration
 
@@ -53,7 +73,7 @@ Modify the `config/http.js` to look like:
 
 ```js
 customMiddleware: function (app) {
-  var swagger = require('sails-swagr');
+  var swagger = require('sails-custom-swagger-hook');
   var express = require('express');
 
   app.use(swagger.init(express, app, {
@@ -206,10 +226,10 @@ That&rsquo;s it!
 
 # Credits
 
-- [swagger-express](swagger-express-url),
-- [sails-swagger](sails-swagger-url)
-- [sails-swagr](sails-swagr-url)
-- [swagger-ui](swagger-ui-url)
+- [swagger-express](https://github.com/fliptoo/swagger-express),
+- [sails-swagger](https://github.com/tjwebb/sails-swagger)
+- [sails-swagr](https://github.com/qbanguy/sails-swagr)
+- [swagger-ui](https://github.com/swagger-api/swagger-ui)
 
 
 ## License
@@ -221,10 +241,3 @@ The [MIT](https://github.com/jasancheg/sails-custom-swagger-hook/blob/master/LIC
 [npm-image]: https://badge.fury.io/js/sails-custom-swagger-hook.svg?style=flat
 [daviddm-url]: https://david-dm.org/jasancheg/sails-custom-swagger-hook
 [daviddm-image]: http://img.shields.io/david/jasancheg/sails-custom-swagger-hook.svg?style=flat
-[sails-url]: http://sailsjs.org/
-[swagger-url]: http://swagger.io/
-[swagger-ui-url]: https://github.com/swagger-api/swagger-ui
-[swagger-express-url]: https://github.com/fliptoo/swagger-express
-[sails-swagger-url]: https://github.com/tjwebb/sails-swagger
-[sails-swagr-url]: https://github.com/qbanguy/sails-swagr
-[sails-get-base-url]: http://sailsjs.org/documentation/reference/application/sails-get-base-url
