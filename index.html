@@ -175,7 +175,7 @@ you may create a <code>docs</code> directory under <code>api/</code> and place Y
 <p>Modify the <code>config/http.js</code> to look like:</p>
 
 <div class="highlight highlight-source-js"><pre><span class="pl-en">customMiddleware</span><span class="pl-k">:</span> <span class="pl-k">function</span> (<span class="pl-smi">app</span>) {
-  <span class="pl-k">var</span> swagger <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>sails-swagr<span class="pl-pds">'</span></span>);
+  <span class="pl-k">var</span> swagger <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>sails-custom-swagger-hook<span class="pl-pds">'</span></span>);
   <span class="pl-k">var</span> express <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>express<span class="pl-pds">'</span></span>);
 
   <span class="pl-smi">app</span>.<span class="pl-en">use</span>(<span class="pl-smi">swagger</span>.<span class="pl-en">init</span>(express, app, {
