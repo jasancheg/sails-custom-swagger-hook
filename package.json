@@ -1,6 +1,6 @@
 {
   "name": "sails-custom-swagger-hook",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Generate Swagger API documentation for Sails JS, and personalize for custom brand",
   "main": "./index.js",
   "directories": {
