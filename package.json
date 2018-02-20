@@ -1,6 +1,6 @@
 {
   "name": "sails-custom-swagger-hook",
-  "version": "1.0.3",
+  "version": "1.0.7",
   "description": "Generate Swagger API documentation for Sails JS, and personalize for custom brand",
   "main": "./index.js",
   "directories": {
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jasancheg/sails-custom-swagger-hook"
+    "url": "https://github.com/enyosolutions/sails-custom-swagger-hook"
   },
   "keywords": [
     "swagger",
@@ -23,12 +23,12 @@
     "sailsjs",
     "Custom swagger ui"
   ],
-  "author": "Jose Antonio Sanchez <jasancheg@gmail.com> (http://inideaweb.com/)",
+  "author": "Jose Antonio Sanchez <jasancheg@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jasancheg/sails-custom-swagger-hook/issues"
+    "url": "https://github.com/enyosolutions/sails-custom-swagger-hook/issues"
   },
-  "homepage": "https://github.com/jasancheg/sails-custom-swagger-hook",
+  "homepage": "https://github.com/enyosolutions/sails-custom-swagger-hook",
   "dependencies": {
     "js-yaml": "^3.3.1",
     "lodash": "^4.16.3",
